@@ -19,6 +19,8 @@ express - backend framework
 nodemon - keep app running when doing changes
 openai
 
+Server is deployed on render.com
+
 
 //how to deploy:
 
