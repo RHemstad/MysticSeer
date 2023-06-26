@@ -10,14 +10,9 @@ cd into client
 npm install
 npm run dev  //make sure you cd into client folder in order for this to work
 
+make sure to install axio
+npm i axios
 
-
-Packages - 
-cors - cross origin requests
-dotenv - secure environment variables
-express - backend framework
-nodemon - keep app running when doing changes
-openai
 
 Server is deployed on render.com
 
