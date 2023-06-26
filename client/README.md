@@ -25,3 +25,9 @@ Server is deployed on render.com
 //how to deploy:
 
 git hub repo
+
+//on script.js (client directory) is where you put the render.com server address when deployed
+
+//deployment on verce occurs when pushed to main
+
+
