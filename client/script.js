@@ -113,7 +113,6 @@ const handleSubmit = async (e) => {
     //get the data from the server
     //when testing set this to be http://localhost:5000
     //otherwise https://project-a-o83f.onrender.com
-    //flag
     const response = await fetch('https://project-a-o83f.onrender.com', {
         method: 'POST',
         headers: {
