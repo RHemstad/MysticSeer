@@ -26,3 +26,7 @@ git hub repo
 //deployment on verce occurs when pushed to main
 
 
+//TroubleShooting - if you get the request failed check your api key against:
+https://openai.com/blog/openai-api
+
+
