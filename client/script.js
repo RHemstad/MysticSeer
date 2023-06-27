@@ -1,5 +1,6 @@
 import bot from './assets/bot.svg';
 import user from './assets/user.svg';
+import axios from 'axios';
 
 //************************************************************* */
 //************ CREATE THE LOGIC TO MAKE OUR AI APPLICATION WORK */
@@ -8,6 +9,10 @@ import user from './assets/user.svg';
 //target html elements manually by using document.querySelector
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
+
+
+
+
 
 /******** FUNCTION LOADER *************/
 //set up the three dots loader for when the bot is "thinking"
@@ -130,7 +135,7 @@ const handleSubmit = async (e) => {
     if (response.ok) {
         const data = await response.json();
         const parsedData = data.bot.trim(); // trims any trailing spaces/'\n' 
-        typeText(messageDiv, parsedData)
+        typeText(messageDiv, parsedData);
     } else {
         const err = await response.text();
         messageDiv.innerHTML = "Something went wrong";
