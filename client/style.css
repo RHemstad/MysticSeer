@@ -14,6 +14,8 @@
   --color-black: #000000;
   --color-white: #ffffff;
 
+
+  
   --primary-color: #5c567e;
   --secondary-color: #000000;
   --accent-color: #fec87c;
@@ -21,6 +23,8 @@
 
   --text-color-primary: #ffffff;
   --text-color-secondary: #000000;
+
+  --border-radius: 4px;
 
   /* Base size: 16px */
   /* Scale: 1.333 Perfect Fourth */
@@ -32,6 +36,8 @@
   --font-size-large: 1.333rem; /* 21.33px */
   --font-size-medium: 1rem; /* 16px */
   --font-size-small: 0.75rem; /* 12px */
+  --font-size-x-small: 0.563rem; /* 9px */
+  --font-size-xx-smal: .422rem; /* 6.76px */
 }
 
 /* ********************************** */
@@ -49,6 +55,20 @@ html {
   font-size: 16px;
 }
 
+/********  FLUID TYPOGRAPHY ***********/ 
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+
+
 body {
   /*
 border: 1px solid red;
@@ -56,34 +76,34 @@ width: inherit;
 display: flex;
 flex-direction: column;
 */
-
-  border: 1px solid red;
+font-family: 'Inter', sans-serif;
   margin: 0;
   display: grid;
   grid-template-rows: 1fr auto;
   grid-template-columns: 100%;
   height: 100vh;
-  /*background-color: var(--secondary-color);*/
+
   background-color: var(--text-color-secondary);
-
-
   background-image: url("../assets/pattern1.svg");
   background-repeat: repeat;
   color: var(--text-color-primary);
-  font-family: 'Inter', sans-serif;
+
+
+
 
 
 }
 
 /* **** HEADINGS ***** */
 h1 {
-  font-size: var(--font-size-xxxxx-large);
+  font-size: var(--font-size-xxx-large);
   color: var(--text-color-primary);
   font-family: "Irish Grover", cursive;
+  letter-spacing: .2rem;
 }
 
 h2 {
-  font-size: var(--font-size-xx-large);
+  font-size: var(--font-size-large);
   color: var(--text-color-primary);
   font-family: "Irish Grover", cursive;
 }
@@ -92,30 +112,49 @@ h3 {
   font-size: var(--font-size-x-large);
 }
 
+
+/* ********* MAIN ********* */
 main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 4px solid green;
-}
-
-/* ********* HERO ********* */
-section {
-}
-
-.hero {
-  border: 1px solid red;
-  flex-basis: 50%;
   height: 100%;
+  /*flex: 2 2 20em;*/
+
+}
+
+
+/* ****************************************** */
+/* ************* HERO AREA WRAPPER ************* */
+/* ****************************************** */
+section.hero_wrapper {
+  height: 100%;
+  border: 4px solid red;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  flex: 2 2 20em;
+  width: 100%;
+}
+
+/* **** header **** */
+.hero_wrapper header {
+  border: 2px solid white;
+}
+
+
+/* **** hero **** */
+.hero {
+  display: flex;
+  height: inherit;
+  align-items: center;
   justify-content: center;
-  /*background-color: var(--secondary-color);*/
+  /*
   background: url(./assets/mysticSeer.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  padding-block: 8rem;
+  background-size: contain;
+  */
 }
 
 .hero img {
@@ -124,24 +163,31 @@ section {
   height: inherit;
 }
 
-/* ********* WRAPPER ********* */
-.wrapper {
+.hero p {
+  border: 1px solid red;
+}
+
+/* ****************************************** */
+/* ************* CHAT AREA WRAPPER ************* */
+/* ****************************************** */
+.chat_wrapper {
   border: 1px solid blue;
-  flex-basis: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  flex: 2 2 20em;
+  width: 100%;
 }
 
-.instructions {
-  border: 4px solid white;
-  width: inherit;
+/* ****************************************** */
+/* ************* CALL TO ACTION ************* */
+.call_to_action {
+  width: 100%;
   background: var(--secondary-color);
-  padding-block: 1rem;
-  padding-inline: 2rem;
+  /*padding-block: 1rem;
+  padding-inline: 2rem;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,14 +199,11 @@ hgroup {
   flex-direction: column;
 }
 
-p {
-  border: 1px solid red;
+/* ANIMATION */
+hgroup #changeText {
 }
 
-#changeText {
-}
-
-#changeText:after {
+hgroup #changeText:after {
   content: "";
   animation: spin 20s linear infinite;
 }
@@ -180,13 +223,14 @@ p {
   }
 }
 
-/* ****************************************** */
-/* ************* SECTION APP ************* */
-/* ****************************************** */
+p {
+  border: 1px solid green;
+}
 
+/* ****************************************** */
+/* ************* CHAT APP ************* */
 section#app {
-  flex-basis: 50%;
-
+  flex-grow: 2;
 }
 
 #app {
@@ -196,14 +240,14 @@ section#app {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: inherit;
-  background: var(--secondary-color);
+  /*background: var(--secondary-color);*/
   min-height: 60%;
+  width: 100%;
+  color: var(--text-color-primary);
 }
 
 /* ****************************************** */
 /* ************* CHAT CONTAINER ************* */
-/* ****************************************** */
 
 #chat_container {
   flex: 1;
@@ -222,14 +266,18 @@ section#app {
 
 /* hides scrollbar */
 #chat_container::-webkit-scrollbar {
-  /*display: none;*/
+  display: none;
 }
 
+
+/* chat response wrapper */ 
+/* contains the icon and the text */
 .wrapper {
   width: 100%;
   padding: 15px;
   border: 1px solid blue;
 }
+
 
 .ai {
   background: #40414f;
@@ -239,7 +287,6 @@ section#app {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -247,13 +294,13 @@ section#app {
   border: 1px solid green;
 }
 
+
+/* chat icon */
 .profile {
   width: 36px;
   height: 36px;
-  border-radius: 5px;
-
+  border-radius: var(--border-radius);
   /*background: #5436da;*/
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -262,7 +309,6 @@ section#app {
 .ai .profile {
   background: #10a37f;
 }
-
 .profile img {
   width: 60%;
   height: 60%;
@@ -271,21 +317,11 @@ section#app {
 
 .message {
   flex: 1;
-
-  color: #dcdcdc;
+  color: var(--text-color-primary);
   font-size: 20px;
-
   max-width: 100%;
   overflow-x: scroll;
-
-  /*
-   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
-   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
-   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
-   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
-  */
   white-space: pre-wrap;
-
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -295,12 +331,20 @@ section#app {
   display: none;
 }
 
+
+/* ****************************************** */
+/* ************* PROMPT AREA FORM ************* */
+
+.prompt_area {
+  border: 1px solid green;
+  width: 100%;
+}
+
 form {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
-
 background: var(--secondary-color);
   display: flex;
   flex-direction: row;
@@ -312,7 +356,7 @@ textarea {
   font-size: 18px;
   padding: 10px;
   background: transparent;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   /*border: none;*/
   border: 1px solid var(--accent-color);
   outline: none;
@@ -320,14 +364,28 @@ textarea {
 
 button {
   outline: 0;
-  border: 0;
+  border: 1px solid orange;
   cursor: pointer;
   background: transparent;
+  color: var(--text-color-primary);
+  border-radius: var(--border-radius);
+}
+
+button:hover {
+  background: var(--accent-color);
+  color: var(--text-color-secondary);
+}
+
+button:active {
+  background: var(--accent-color);
+  color: var(--text-color-secondary);
 }
 
 form img {
+  /*
   width: 30px;
   height: 30px;
+  */
 }
 
 /* ****************************************** */
@@ -337,4 +395,93 @@ form img {
 footer {
   border: 1px solid blue;
   width: 100%;
+  font-size: var(--font-size-x-small);
 }
+
+
+
+/* *********************************** */
+/* *********************************** */
+/* ********** MEDIA QUERY ************ */
+/* *********************************** */
+/* *********************************** */
+/* https://css-tricks.com/a-complete-guide-to-css-media-queries/ */
+
+
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media screen and (max-width: 575.98px) { 
+  main {
+    flex-direction: column;
+    border: 10px solid pink;
+  }
+
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+  main {
+    flex-direction: column;
+    border: 10px solid orange;
+  }
+
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  main {
+    flex-direction: column;
+    border: 10px solid green;
+  }
+
+}
+
+/* 8Large devices (desktops, less than 1200px) */
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+
+  main {
+    flex-direction: column;
+    border: 10px solid yellow;
+  }
+
+
+ }
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media screen and (min-width: 1200px) and (max-width: 1399.98px) { 
+  main {
+    flex-direction: row;
+    border: 10px solid purple;
+  }
+}
+
+
+/* XX-Large devices (extra large desktops, less than 1600px) */
+@media screen and (min-width: 1400px) {
+  main {
+    flex-direction: row;
+    border: 10px solid orange;
+  }
+
+
+}
+
+
+/* TO DO SET UP FOR LANDSCAPE MODE */
+/* LANDSCAPE MODE
+@media (min-width: 568px) and (orientation: landscape) {
+  
+  
+  main {
+    flex-direction: row;
+    border: 4px solid blue;
+  }
+
+}
+
+@media (min-height: 680px), screen and (orientation: portrait) {
+
+}
+ */
+
