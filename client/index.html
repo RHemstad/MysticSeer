@@ -19,41 +19,56 @@
     <!-- *************** MAIN *************** -->
     <main>
 
-       <!-- *************** HERO SECTION *************** -->
-      <section class="hero" id="hero">
-         <h1>MYSTIC SEER</h1>
-        <!--img src="./assets/mysticSeer.svg" alt="mystic seer" /-->
+
+      <!-- *************** HERO SECTION *************** -->
+      <section class="hero_wrapper">
+        <!-- **** header **** -->
+        <header><h1>MYSTIC SEER</h1></header>
+        <!-- **** hero **** -->
+
+
+
+        <div class="hero" id="hero">
+          <!--<p>Ask the Mystic Seer a question and receive a divine answer!</p> -->
+          <img src="./assets/mysticSeer.svg" alt="mystic seer">
+
+        </div>
+
+
+      
       </section> 
 
-      <div class="wrapper">
 
+      <!-- ************************************************* -->  
+      <!-- *************** CHAT AREA WRAPPER *************** -->
+      
+      <section class="chat_wrapper">
 
-      <!-- *************** APP SECTION WRAPPER *************** -->
-      <section class="instructions">
-       
-      <hgroup>
-      <h2 id="changeText" title="Has divine truth eluded you?">&nbsp;</h2>
-      <p>Let Me Foretell your future!</p>
-      </hgroup>
+        <!-- **** call to action **** -->
+        <div class="call_to_action">
+        <hgroup>
+        <h2 id="changeText" title="Has divine truth eluded you?">&nbsp;</h2>
+        <p>Let Me Foretell your future!</p>
+        </hgroup>
+        </div>
 
-      </section>
+        <!-- **** chat app **** -->
+        <section id="app">
+            <!-- **** chat container results **** -->
+            <div id="chat_container"></div>
 
+            <!-- **** prompt area **** -->
+            <div class="prompt_area">
+            <form>
+            <textarea name="prompt" rows="1" cols="1" placeholder="Ask The Mystic Seer"></textarea>
+            <button type="submit">Ask the Seer!<!--img src="./assets/send.svg" alt="submit button" /--></button>
+            </form>
+            </div>
 
+            <!-- SCRIPT JS WRITES HTML TO THIS AREA -->
+        </section>
+     
 
-      <!-- *************** APP SECTION WRAPPER *************** -->
-      <section id="app">
-                  <!-- *************** CHAT CONTAINER *************** -->
-                  <div id="chat_container"></div>
-                  <form>
-                    <textarea name="prompt" rows="1" cols="1" placeholder="Ask The Mystic Seer"></textarea>
-                    <button type="submit">SUBMIT BUTTON<img src="./assets/send.svg" alt="submit button" /></button>
-                  </form>
-                  <!-- SCRIPT JS WRITES HTML TO THIS AREA -->
-
-      </section>
-      <!-- *************** END APP WRAPPER *************** -->
-
-    </div>
 
     </main>
     <!-- *************** END MAIN *************** -->
