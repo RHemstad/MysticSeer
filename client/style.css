@@ -16,10 +16,9 @@
 
 
   
-  --primary-color: #5c567e;
+  --primary-color: #fec87c;
   --secondary-color: #000000;
-  --accent-color: #fec87c;
-
+  --accent-color: #5c567e;
 
   --text-color-primary: #ffffff;
   --text-color-secondary: #000000;
@@ -261,7 +260,7 @@ section#app {
   scrollbar-width: none;
   padding-bottom: 20px;
   scroll-behavior: smooth;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--primary-color);
 }
 
 /* hides scrollbar */
@@ -272,7 +271,7 @@ section#app {
 
 /* chat response wrapper */ 
 /* contains the icon and the text */
-.wrapper {
+.message_wrapper {
   width: 100%;
   padding: 15px;
   border: 1px solid blue;
@@ -280,7 +279,7 @@ section#app {
 
 
 .ai {
-  background: #40414f;
+  /*background: #40414f;*/
 }
 
 .chat {
@@ -300,18 +299,19 @@ section#app {
   width: 36px;
   height: 36px;
   border-radius: var(--border-radius);
-  /*background: #5436da;*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* background color of the icon affiliated with the ai */
 .ai .profile {
-  background: #10a37f;
+  background: var(--primary-color);
 }
+
 .profile img {
-  width: 60%;
-  height: 60%;
+  width: inherit;
+  height: inherit;
   object-fit: contain;
 }
 
@@ -358,8 +358,9 @@ textarea {
   background: transparent;
   border-radius: var(--border-radius);
   /*border: none;*/
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--primary-color);
   outline: none;
+  color: var(--text-color-primary);
 }
 
 button {
@@ -372,12 +373,12 @@ button {
 }
 
 button:hover {
-  background: var(--accent-color);
+  background: var(--primary-color);
   color: var(--text-color-secondary);
 }
 
 button:active {
-  background: var(--accent-color);
+  background: var(--primary-color);
   color: var(--text-color-secondary);
 }
 
