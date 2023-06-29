@@ -22,6 +22,8 @@
   </head>
   <body>
 
+
+
     <!-- ********************************************** -->
     <!-- *************** MAIN *************** -->
     <main>
@@ -30,7 +32,7 @@
       <!-- *************** HERO SECTION *************** -->
       <section class="hero_wrapper">
         <!-- **** header **** -->
-        <header><h1>MYSTIC SEER</h1></header>
+        <header><h1 class="anaglyph">MYSTIC SEER</h1></header>
         <!-- **** hero **** -->
 
         <div class="hero" id="hero">
@@ -48,27 +50,34 @@
         <div class="call_to_action">
         <hgroup>
         <h2 class="changeText" id="changeText" title="Has divine truth eluded you?">&nbsp;</h2>
-        <p>Let the Mystic Seer foretell your future!</p>
+        <!--p>Let the Mystic Seer foretell your future!</p-->
         </hgroup>
         </div>
 
             
         <!-- **** chat app **** -->
         <section id="app">
+            <!-- **** prompt area **** -->
+            <div class="prompt_area">
+              <form>
+              <textarea name="prompt" rows="1" cols="1" placeholder="Ask The Mystic Seer a Question!"></textarea>
+              <button type="submit">Send</button>
+              </form>
+            </div>
+
             <!-- **** chat container results **** -->
              <!-- SCRIPT JS WRITES HTML IN THIS DIV CONTAINER -->
             <div id="chat_container"></div>
 
-            <!-- **** prompt area **** -->
-            <div class="prompt_area">
-            <form>
-            <textarea name="prompt" rows="1" cols="1" placeholder="Ask The Mystic Seer"></textarea>
-            <button type="submit">Send</button>
-            </form>
-            </div>
-        </section>
-     
 
+
+
+        </section>
+
+
+
+  
+  
 
     </main>
     <!-- *************** END MAIN *************** -->
@@ -83,6 +92,8 @@
 
 
 
+
+
     <!-- ************************************************* -->  
     <!-- *************** MODAL *************** -->
       
@@ -91,7 +102,7 @@
       <!-- **** modal content **** -->
       <section class="modal-content">
         <span class="close">&times;</span>
-        <h2>About Mystic Seer</p>
+        <h2>About Mystic Seer</h2>
         <p>Mystic Seer is a ChatGPT AI App written in Vanilla Javascript. It uses ChatGPT3.5 model and OpenAI API. It is a project that I created to learn more about AI and how to implement it into a website while practicing my Javascript skills.</p>
 
         <p>It demonstrates "The Barnum effect", a common psychological phenomenon whereby individuals give high accuracy ratings to descriptions of their personality that supposedly are tailored specifically to them, yet which are in fact vague and general enough to apply to a wide range of people. This effect can provide a partial explanation for the widespread acceptance of some paranormal beliefs and practices, such as astrology, fortune telling, aura reading, and some types of personality tests.</p>
