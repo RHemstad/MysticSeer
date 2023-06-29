@@ -9,11 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Irish+Grover&display=swap" rel="stylesheet">
+
+
+
+    <link rel="apple-touch-icon" href="./favicon/appleicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-152x152.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="shortcut icon" href="./favicon/favicon.ico" />
+
   </head>
   <body>
-
-
-
 
     <!-- ********************************************** -->
     <!-- *************** MAIN *************** -->
@@ -26,16 +33,9 @@
         <header><h1>MYSTIC SEER</h1></header>
         <!-- **** hero **** -->
 
-
-
         <div class="hero" id="hero">
-          <!--<p>Ask the Mystic Seer a question and receive a divine answer!</p> -->
-          <img src="./assets/mysticSeer.svg" alt="mystic seer">
-
+          <!-- animation can go here -->
         </div>
-
-
-      
       </section> 
 
 
@@ -47,13 +47,12 @@
         <!-- **** call to action **** -->
         <div class="call_to_action">
         <hgroup>
-        <h2 id="changeText" title="Has divine truth eluded you?">&nbsp;</h2>
-        <p>Let Me Foretell your future!</p>
+        <h2 class="changeText" id="changeText" title="Has divine truth eluded you?">&nbsp;</h2>
+        <p>Let the Mystic Seer foretell your future!</p>
         </hgroup>
         </div>
 
-                   
-
+            
         <!-- **** chat app **** -->
         <section id="app">
             <!-- **** chat container results **** -->
@@ -67,8 +66,6 @@
             <button type="submit">Ask the Seer!<!--img src="./assets/send.svg" alt="submit button" /--></button>
             </form>
             </div>
-
-
         </section>
      
 
@@ -79,11 +76,30 @@
 
     <!-- ********************************************** -->
     <!-- *************** FOOTER *************** -->
-    <footer>Copyright RHemstad</footer>
+    <footer><button class="button" id="aboutBtn">About This Project</a></footer>
     <!-- *************** END FOOTER *************** -->
 
 
 
+
+
+    <!-- ************************************************* -->  
+    <!-- *************** MODAL *************** -->
+      
+    <!-- **** modal **** -->
+    <div id="aboutModal" class="modal">
+      <!-- **** modal content **** -->
+      <section class="modal-content">
+        <span class="close">&times;</span>
+        <h2>About Mystic Seer</p>
+        <p>Mystic Seer is a simple AI chatbot written in Vanilla Javascript that pulls from ChatGPT. It is a project that I created to learn more about AI and how to implement it into a website while practicing my Javascript Skills.</p>
+        <p>The website artwork is Anaglyph 3D. You can view it with 3D glasses.</p>
+        </section>
+    </div>
+
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules -->
     <script type="module" src="script.js"></script>
+    <script src="modal.js"></script>
   </body>
 </html>
