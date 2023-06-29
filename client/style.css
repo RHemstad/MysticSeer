@@ -203,12 +203,10 @@ section.hero_wrapper {
 /* ************* CALL TO ACTION ************* */
 .call_to_action {
   width: 100%;
-  background: var(--secondary-color);
-  /*padding-block: 1rem;
-  padding-inline: 2rem;*/
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 150px;
 }
 
 hgroup {
@@ -304,6 +302,7 @@ section#app {
   padding-block: .5rem;
   border: 1px solid var(--primary-color);
   border-radius: var(--border-radius);
+  background: var(--secondary-color);
 }
 
 
@@ -334,7 +333,7 @@ section#app {
 
 /* background color of the icon affiliated with the ai */
 .ai .profile_icon {
-  background: var(--primary-color);
+  background: var(--accent-color);
 }
 
 .profile_icon img {
