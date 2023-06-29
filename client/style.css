@@ -111,7 +111,7 @@ h1 {
 }
 
 h2 {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-x-large);
   color: var(--text-color-primary);
   font-family: "Irish Grover", cursive;
 }
@@ -165,6 +165,15 @@ section.hero_wrapper {
   text-align: center;
   line-height: 1;
   flex: 0 0 auto; /*flex-grow, flex-shrink, flex-basis aka max, min, ideal size */
+}
+
+.anaglyph {
+  box-sizing: content-box;
+  border: none;
+  text-align: center;
+  text-overflow: clip;
+  letter-spacing: 3px;
+  text-shadow: -3px 0 1px rgb(30,242,241) , 3px 0 1px rgb(246,5,10) ;
 }
 
 /* **** hero **** */
@@ -234,13 +243,13 @@ hgroup #changeText:after {
     content: "Has divine truth eluded you?";
   }
   25% {
-    content: "Has divine truth eluded you?";
-  }
-  50% {
     content: "Have you felt destiny pass you by?";
   }
-  100% {
+  50% {
     content: "Do you seek the answers in the stars?";
+  }
+  100% {
+    content: "Let the Mystic Seer reveal your fate!";
   }
 }
 
@@ -370,9 +379,8 @@ form {
 
 textarea {
   width: 100%;
-  font-size: 18px;
-  padding-inline: .5rem;
-  padding-blocK: .5rem;
+  padding-inline: .25rem;
+  padding-blocK: .25rem;
   background: transparent;
   border-radius: var(--border-radius);
   border: 1px solid var(--primary-color);
@@ -391,6 +399,13 @@ button {
   border-radius: var(--border-radius);
   padding-inline: 1rem;
   padding-block: .5rem;
+  font-size: var(--font-size-small);
+}
+
+footer button {
+  font-size: var(--font-size-x-small);
+  padding-inline: .5rem;
+  padding-block: .25rem;
 }
 
 button:hover {
@@ -497,6 +512,16 @@ footer {
   .modal-content p {
     font-size: var(--font-size-small);
   }
+  h2 {
+    font-size: var(--font-size-x-large);
+  }
+  hgroup p {
+    font-size: var(--font-size-medium);
+  }
+  textarea {
+    font-size: var(--font-size-medium);
+  }
+ 
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -520,6 +545,13 @@ footer {
 
   h2 {
     font-size: var(--font-size-x-large);
+  }
+  hgroup p {
+    font-size: var(--font-size-medium);
+  }
+
+  textarea {
+    font-size: var(--font-size-medium);
   }
 }
 
@@ -545,6 +577,14 @@ footer {
   h2 {
     font-size: var(--font-size-x-large);
   }
+
+  hgroup p {
+    font-size: var(--font-size-medium);
+  }
+
+  textarea {
+    font-size: var(--font-size-medium);
+  }
 }
 
 /* Large devices (desktops, less than 1200px) */
@@ -564,6 +604,10 @@ footer {
 
   h2 {
     font-size: var(--font-size-x-large);
+  }
+
+  hgroup p {
+    font-size: var(--font-size-medium);
   }
  }
 
