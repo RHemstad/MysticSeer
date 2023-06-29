@@ -378,6 +378,8 @@ textarea {
   border: 1px solid var(--primary-color);
   outline: none;
   color: var(--text-color-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: var(--font-size-small);
 }
 
 button {
@@ -387,8 +389,8 @@ button {
   background: var(--button-background-color-normal);
   color: var(--text-color-primary);
   border-radius: var(--border-radius);
-  padding-inline: .25rem;
-  padding-block: .25rem;
+  padding-inline: 1rem;
+  padding-block: .5rem;
 }
 
 button:hover {
@@ -451,6 +453,7 @@ footer {
   font-size: var(--font-size-x-small);
   padding-inline: .5rem;
   padding-block: .25rem;
+  max-width: 72ch;
 }
 
 /* The Close Button */
@@ -490,6 +493,10 @@ footer {
   .message {
     font-size: var(--font-size-small);
   }
+
+  .modal-content p {
+    font-size: var(--font-size-small);
+  }
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -505,6 +512,14 @@ footer {
 
   .message {
     font-size: var(--font-size-small);
+  }
+
+  .modal-content p {
+    font-size: var(--font-size-small);
+  }
+
+  h2 {
+    font-size: var(--font-size-x-large);
   }
 }
 
@@ -522,9 +537,17 @@ footer {
   .message {
     font-size: var(--font-size-small);
   }
+
+  .modal-content p {
+    font-size: var(--font-size-small);
+  }
+
+  h2 {
+    font-size: var(--font-size-x-large);
+  }
 }
 
-/* 8Large devices (desktops, less than 1200px) */
+/* Large devices (desktops, less than 1200px) */
 @media screen and (min-width: 992px) and (max-width: 1199.98px) {
   main {
     flex-direction: row;
@@ -533,6 +556,14 @@ footer {
 
   .hero {
     background-size: cover;
+  }
+
+  .modal-content p {
+    font-size: var(--font-size-small);
+  }
+
+  h2 {
+    font-size: var(--font-size-x-large);
   }
  }
 
