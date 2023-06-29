@@ -18,17 +18,17 @@
   --secondary-color: var(--color-black);
   --accent-color: var(--color-five);
   --tertiary-color: var(--color-six);
+
   --text-color-primary: var(--color-white);
   --text-color-secondary: var(--color-black);
-  
   --text-color-accent: var(--color-four);
 
   --border-radius: 4px;
 
-  --link-color-normal: #ffffff;
-  --link-color-hover: #ffffff;
-  --link-color-active: #ffffff;
-  --link-color-visited: #ffffff;
+  --link-color-normal: var(--text-color-primary);
+  --link-color-hover: var(--text-color-accent);
+  --link-color-active: var(--text-color-accent);
+  --link-color-visited: var(--text-color-accent);
 
   --button-background-color-normal: #52489c;
   --button-background-color-hover: #7249B3;
@@ -116,7 +116,8 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100%;
+  min-height: 100%;
+  height: inherit;
   /*flex: 2 2 20em;*/
   /*flex-wrap: wrap;*/
 
@@ -145,7 +146,6 @@ a:visited {
 /* ****************************************** */
 section.hero_wrapper {
   height: 100%;
-  border: 4px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -190,7 +190,6 @@ section.hero_wrapper {
 /* ************* CHAT AREA WRAPPER ************* */
 /* ****************************************** */
 .chat_wrapper {
-  border: 1px solid blue;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -347,7 +346,7 @@ section#app {
 .message {
   flex: 1;
   color: var(--text-color-primary);
-  font-size: 20px;
+  font-size: var(--font-size-small);;
   max-width: 100%;
   overflow-x: scroll;
   white-space: pre-wrap;
