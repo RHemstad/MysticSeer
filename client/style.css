@@ -10,15 +10,17 @@
   --color-three: #279Af1;
   --color-four: #Cba135;
   --color-five: #52489c;
+  --color-six: #776CBC;
   --color-black: #000000;
   --color-white: #ffffff;
   
   --primary-color: var(--color-four);
   --secondary-color: var(--color-black);
   --accent-color: var(--color-five);
-
+  --tertiary-color: var(--color-six);
   --text-color-primary: var(--color-white);
   --text-color-secondary: var(--color-black);
+  
   --text-color-accent: var(--color-four);
 
   --border-radius: 4px;
@@ -92,7 +94,7 @@ body {
 /* **** HEADINGS ***** */
 h1 {
   font-size: var(--font-size-xxx-large);
-  color: var(--text-color-primary);
+  color: var(--tertiary-color);
   font-family: "Irish Grover", cursive;
   letter-spacing: .2rem;
 
