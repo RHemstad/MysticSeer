@@ -156,7 +156,6 @@ section.hero_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid red;
   /*background: var(--secondary-color);*/
 }
 
@@ -187,12 +186,10 @@ section.hero_wrapper {
   background-size: cover;
   width: inherit;
   min-height: 200px;
-  border: 1px solid blue;
   flex: 2 1 auto; /*flex-grow, flex-shrink, flex-basis aka max, min, ideal size */
 }
 
 .hero p {
-  border: 1px solid red;
 }
 
 /* ****************************************** */
@@ -272,7 +269,6 @@ section#app {
   color: var(--text-color-primary);
   flex: 2 2 auto; /*flex-grow, flex-shrink, flex-basis aka max, min, ideal size */
   max-height: 600px;
-  border: 1px solid yellow;
 }
 
 /* ****************************************** */
@@ -287,7 +283,6 @@ section#app {
   scroll-behavior: smooth;
   padding-inline: .5rem;
   padding-block: .5rem;
-  border: 1px solid red;
   flex: 2 2 auto;
   overflow: auto;
   /*-ms-overflow-style: none;*/
@@ -360,7 +355,6 @@ section#app {
 /* ************* PROMPT AREA FORM ************* */
 
 .prompt_area {
-  border: 1px solid green;
   width: 100%;
   flex: 0 0 auto;
 }
@@ -380,7 +374,7 @@ form {
 textarea {
   width: 100%;
   padding-inline: .25rem;
-  padding-blocK: .25rem;
+  padding-block: .25rem;
   background: transparent;
   border-radius: var(--border-radius);
   border: 1px solid var(--primary-color);
@@ -425,7 +419,6 @@ button:active {
 /* ****************************************** */
 
 footer {
-  border: 1px solid blue;
   width: 100%;
   font-size: var(--font-size-x-small);
   padding-inline: .5rem;
@@ -498,7 +491,6 @@ footer {
 @media screen and (max-width: 575.98px) { 
   main {
     flex-direction: column;
-    border: 10px solid pink;
   }
 
   .hero {
@@ -528,7 +520,6 @@ footer {
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
   main {
     flex-direction: column;
-    border: 10px solid orange;
   }
 
   .hero {
@@ -559,7 +550,6 @@ footer {
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
   main {
     flex-direction: column;
-    border: 10px solid green;
   }
 
   .hero {
@@ -591,7 +581,6 @@ footer {
 @media screen and (min-width: 992px) and (max-width: 1199.98px) {
   main {
     flex-direction: row;
-    border: 10px solid yellow;
   }
 
   .hero {
@@ -615,7 +604,6 @@ footer {
 @media screen and (min-width: 1200px) and (max-width: 1399.98px) { 
   main {
     flex-direction: row;
-    border: 10px solid purple;
   }
 }
 
@@ -623,7 +611,6 @@ footer {
 @media screen and (min-width: 1400px) {
   main {
     flex-direction: row;
-    border: 10px solid orange;
   }
 }
 
