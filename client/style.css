@@ -4,27 +4,34 @@
 /* ********************************** */
 
 :root {
-  --color-red-light: #cf594f;
-  --color-red-dark: #985254;
-  --color-purple-light: #816fae;
-  --color-purple-dark: #5c567e;
-  --color-light-yellow: #f5e558;
-  --color-dark-yellow: #cda95f;
-  --color-light-green: #9fcec5;
+
+  --color-one: #D61600;
+  --color-two: #94F9F9;
+  --color-three: #279Af1;
+  --color-four: #Cba135;
+  --color-five: #52489c;
   --color-black: #000000;
   --color-white: #ffffff;
-
-
   
-  --primary-color: #5c567e;
-  --secondary-color: #000000;
-  --accent-color: #fec87c;
+  --primary-color: var(--color-four);
+  --secondary-color: var(--color-black);
+  --accent-color: var(--color-five);
 
-
-  --text-color-primary: #ffffff;
-  --text-color-secondary: #000000;
+  --text-color-primary: var(--color-white);
+  --text-color-secondary: var(--color-black);
+  --text-color-accent: var(--color-four);
 
   --border-radius: 4px;
+
+  --link-color-normal: #ffffff;
+  --link-color-hover: #ffffff;
+  --link-color-active: #ffffff;
+  --link-color-visited: #ffffff;
+
+  --button-background-color-normal: #52489c;
+  --button-background-color-hover: #7249B3;
+  --button-background-color-active: #8745A8;
+
 
   /* Base size: 16px */
   /* Scale: 1.333 Perfect Fourth */
@@ -68,30 +75,18 @@ html {
 }
 
 
-
 body {
-  /*
-border: 1px solid red;
-width: inherit;
-display: flex;
-flex-direction: column;
-*/
-font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   display: grid;
   grid-template-rows: 1fr auto;
   grid-template-columns: 100%;
   height: 100vh;
-
   background-color: var(--text-color-secondary);
   background-image: url("../assets/pattern1.svg");
   background-repeat: repeat;
   color: var(--text-color-primary);
-
-
-
-
-
+  background-size: 30%;
 }
 
 /* **** HEADINGS ***** */
@@ -100,6 +95,7 @@ h1 {
   color: var(--text-color-primary);
   font-family: "Irish Grover", cursive;
   letter-spacing: .2rem;
+
 }
 
 h2 {
@@ -120,8 +116,26 @@ main {
   align-items: center;
   height: 100%;
   /*flex: 2 2 20em;*/
+  /*flex-wrap: wrap;*/
 
 }
+
+a:link {
+  color: orange;
+
+}
+
+a:hover {
+  color: orange;
+}
+
+a:active {
+  color: orange;
+} 
+
+a:visited {
+  color: orange;
+} 
 
 
 /* ****************************************** */
@@ -133,13 +147,16 @@ section.hero_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 2 2 20em;
+  /*flex: 2 2 20em; */
+  flex: 1 0 50%;
   width: 100%;
+  background: var(--secondary-color);
 }
 
 /* **** header **** */
 .hero_wrapper header {
-  border: 2px solid white;
+  text-align: center;
+  line-height: 1;
 }
 
 
@@ -149,12 +166,12 @@ section.hero_wrapper {
   height: inherit;
   align-items: center;
   justify-content: center;
-  /*
+
   background: url(./assets/mysticSeer.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
-  */
+  background-size: cover;
+  width: inherit;
 }
 
 .hero img {
@@ -177,7 +194,8 @@ section.hero_wrapper {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 2 2 20em;
+  /*flex: 2 2 20em;*/
+  flex: 1 0 50%;
   width: 100%;
 }
 
@@ -196,7 +214,15 @@ section.hero_wrapper {
 hgroup {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  padding-block: .5rem;
+  min-width: 100%;
+  text-align: center;
+}
+
+hgroup #changeText {
+
 }
 
 /* ANIMATION */
@@ -219,12 +245,12 @@ hgroup #changeText:after {
     content: "Have you felt destiny pass you by?";
   }
   100% {
-    content: "Have you sought the answers in the stars?";
+    content: "Do you seek the answers in the stars?";
   }
 }
 
-p {
-  border: 1px solid green;
+hgroup p {
+  font-size: var(--font-size-small);
 }
 
 /* ****************************************** */
@@ -250,7 +276,7 @@ section#app {
 /* ************* CHAT CONTAINER ************* */
 
 #chat_container {
-  flex: 1;
+  /*flex: 1;*/
   width: 100%;
   height: 100%;
   overflow-y: scroll;
@@ -261,7 +287,7 @@ section#app {
   scrollbar-width: none;
   padding-bottom: 20px;
   scroll-behavior: smooth;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--primary-color);
 }
 
 /* hides scrollbar */
@@ -272,7 +298,7 @@ section#app {
 
 /* chat response wrapper */ 
 /* contains the icon and the text */
-.wrapper {
+.message_wrapper {
   width: 100%;
   padding: 15px;
   border: 1px solid blue;
@@ -280,7 +306,7 @@ section#app {
 
 
 .ai {
-  background: #40414f;
+  /*background: #40414f;*/
 }
 
 .chat {
@@ -300,18 +326,19 @@ section#app {
   width: 36px;
   height: 36px;
   border-radius: var(--border-radius);
-  /*background: #5436da;*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* background color of the icon affiliated with the ai */
 .ai .profile {
-  background: #10a37f;
+  background: var(--primary-color);
 }
+
 .profile img {
-  width: 60%;
-  height: 60%;
+  width: inherit;
+  height: inherit;
   object-fit: contain;
 }
 
@@ -354,31 +381,37 @@ background: var(--secondary-color);
 textarea {
   width: 100%;
   font-size: 18px;
-  padding: 10px;
+  padding-inline: .5rem;
+  padding-blocK: .5rem;
   background: transparent;
   border-radius: var(--border-radius);
   /*border: none;*/
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--primary-color);
   outline: none;
+  color: var(--text-color-primary);
 }
 
 button {
   outline: 0;
-  border: 1px solid orange;
+  border: 1px solid var(--primary-color);
   cursor: pointer;
-  background: transparent;
+  background: var(--button-background-color-normal);
   color: var(--text-color-primary);
   border-radius: var(--border-radius);
+  padding-inline: .25rem;
+  padding-block: .25rem;
 }
 
 button:hover {
-  background: var(--accent-color);
-  color: var(--text-color-secondary);
+  background: var(--primary-color);
+  color: var(--text-color-primary);
+  background: var(--button-background-color-hover);
 }
 
 button:active {
-  background: var(--accent-color);
-  color: var(--text-color-secondary);
+  background: var(--primary-color);
+  color: var(--text-color-primary);
+  background: var(--button-background-color-active);
 }
 
 form img {
@@ -396,7 +429,65 @@ footer {
   border: 1px solid blue;
   width: 100%;
   font-size: var(--font-size-x-small);
+  padding-inline: .5rem;
+  padding-block: .5rem;
 }
+
+
+/* ****************************************** */
+/* ************* MODAL ************* */
+/* ****************************************** */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: var(--secondary-color);
+  margin: 15% auto;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  width: 80%;
+  color: var(--text-color-primary);
+  border-radius: var(--border-radius);
+  border: 4px solid var(--primary-color);
+}
+
+.modal-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--font-size-x-small);
+  padding-inline: .5rem;
+  padding-block: .25rem;
+}
+
+/* The Close Button */
+.close {
+  color: var(--text-color-accent);
+  float: right; /* to do - change this out for flexbox */
+  font-size: var(--font-size-large);
+}
+
+.close:hover,
+.close:focus {
+  color: var(---text-color-primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
 
 
 
@@ -416,6 +507,11 @@ footer {
     border: 10px solid pink;
   }
 
+  .hero {
+    background-size: contain;
+  }
+
+
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -423,6 +519,10 @@ footer {
   main {
     flex-direction: column;
     border: 10px solid orange;
+  }
+
+  .hero {
+    background-size: contain;
   }
 
 
@@ -435,14 +535,24 @@ footer {
     border: 10px solid green;
   }
 
+  .hero {
+    background-size: containcover;
+  }
+
+
+
 }
 
 /* 8Large devices (desktops, less than 1200px) */
 @media screen and (min-width: 992px) and (max-width: 1199.98px) {
 
   main {
-    flex-direction: column;
+    flex-direction: row;
     border: 10px solid yellow;
+  }
+
+  .hero {
+    background-size: cover;
   }
 
 
