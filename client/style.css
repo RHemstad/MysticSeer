@@ -287,7 +287,7 @@ section#app {
   scrollbar-width: none;
   padding-bottom: 20px;
   scroll-behavior: smooth;
-  border: 1px solid var(--primary-color);
+  padding-inline: .5rem;
 }
 
 /* hides scrollbar */
@@ -300,8 +300,10 @@ section#app {
 /* contains the icon and the text */
 .message_wrapper {
   width: 100%;
-  padding: 15px;
-  border: 1px solid blue;
+  padding-inline: .5rem;
+  padding-block: .5rem;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
 }
 
 
@@ -317,12 +319,11 @@ section#app {
   flex-direction: row;
   align-items: flex-start;
   gap: 10px;
-  border: 1px solid green;
 }
 
 
 /* chat icon */
-.profile {
+.profile_icon {
   width: 36px;
   height: 36px;
   border-radius: var(--border-radius);
@@ -332,11 +333,11 @@ section#app {
 }
 
 /* background color of the icon affiliated with the ai */
-.ai .profile {
+.ai .profile_icon {
   background: var(--primary-color);
 }
 
-.profile img {
+.profile_icon img {
   width: inherit;
   height: inherit;
   object-fit: contain;
