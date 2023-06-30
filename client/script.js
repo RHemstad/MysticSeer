@@ -3,21 +3,17 @@ import user from './assets/user.svg';
 import axios from 'axios';
 
 //************************************************************* */
-//************ CREATE THE LOGIC TO MAKE OUR AI APPLICATION WORK */
+//************ CREATE THE LOGIC TO MAKE OUR PROJECT WORK */
 //************************************************************* */
 
 //target html elements manually by using document.querySelector
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 
-
-
-
-
 /******** FUNCTION LOADER *************/
 //set up the three dots loader for when the bot is "thinking"
 
-let loadInterval
+let loadInterval;
 
 function loader(element) {
     element.textContent = '';
@@ -58,16 +54,21 @@ function typeText(element, text) {
 
 /******** FUNCTION GENERATE UNIQUE ID *************/
 //function that creates a unique id for each message
-//what is a way to generate a unique id? timestamp, a random number, hexadecimalString
+//what is a way to generate a unique id? timestamp, and random number
 function generateUniqueId() {
-    const timestamp = Date.now();
-    const randomNumber = Math.random();
-    const hexadecimalString = randomNumber.toString(16);
-
-    return `id-${timestamp}-${hexadecimalString}`;
+    const timestamp = Date.now(); //static method that returns the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
+    const randomNumber = Math.random(); //static method
+    const longString = randomNumber.toString(16);
+    return `id-${timestamp}-${longString}`;
 }
 
-function chatStripe(isAi, value, uniqueId) {
+
+/******** FUNCTION CHAT ROW FORMATTING *************/
+//function that creates (and formats) a chat row
+//pass the data from the server
+//pass the correct icon for the message
+//pass the unique id for the message
+function chatRow(isAi, value, uniqueId) {
     return (
         `
         <div class="message_wrapper ${isAi && 'ai'}">
@@ -85,25 +86,28 @@ function chatStripe(isAi, value, uniqueId) {
     )
 }
 
-/**** HANDLE SUBMIT FUNCTION WHICH IS TRIGGER TO GET AI RESPONSE */
-const handleSubmit = async (e) => {
+/******** FUNCTION HANDLESUBMIT FUNCTION *************/
+/**** this is my trigger to get the ai response */
+/* https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing */
+
+const handleSubmit = async (event) => {
     //dont want browser to refresh on submit
-    e.preventDefault();
+    event.preventDefault();
 
     //get form data
     const data = new FormData(form);
 
     //generate new chat stripe for the user
-    chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
+    chatContainer.innerHTML += chatRow(false, data.get('prompt'));
 
     // clear textarea input 
     form.reset();
 
-    // bot's chatstripe
+    // bot's chatrow
     //const uniqueId = generateUniqueId(); //unique id for it's message
     const uniqueId = generateUniqueId();
     //make sure there is always a space between quotations 
-    chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
+    chatContainer.innerHTML += chatRow(true, " ", uniqueId);
 
     //as user types keep scrolling
     chatContainer.scrollTop = chatContainer.scrollHeight;
@@ -115,7 +119,8 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv);
 
-    //get the data from the server
+    //get the data from the server - server is being hosted by render.com for public consumption
+    //and post it to the page
     //when testing set this to be http://localhost:5000
     //otherwise https://project-a-o83f.onrender.com
     const response = await fetch('https://project-a-o83f.onrender.com', {
@@ -146,15 +151,15 @@ const handleSubmit = async (e) => {
 //add event listener for the form in order to call our handleSubmit function
 //enable the user to submit via button or enter key
 form.addEventListener('submit', handleSubmit)
-form.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') {
-        handleSubmit(e);
+form.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        handleSubmit(event);
      };
 });
 
 
 //************************************************************* */
-//************ ADD THE MODAL */
+//************ LAUNCH THE MODAL THAT IS IN THE FOOTER */
 //************************************************************* */
 
 
