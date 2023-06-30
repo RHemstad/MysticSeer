@@ -1,11 +1,23 @@
+/**** https://expressjs.com/ *****/
+/* basic web server */
+
+/**** dotenv **********/
+/** for my .env file */
+
+/**** cors ***** */
+/** to prevent cross browser issues */
+
+/**** openai **********/
+/** openai api */
+
+
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 
 dotenv.config();
-//console.log(process.env.OPENAI_API_KEY); use this to check if the api key is being read is failures occur
-
+//console.log(process.env.OPENAI_API_KEY); use this to check if the api key is being read iF failures occur
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -17,12 +29,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+/*** validate that I'm connected via get */
 app.get('/', async (req, res) => {
   res.status(200).send({
     message: 'Hello!'
   })
 })
 
+//************* THIS COMES FROM THE OPENAI CHATGPT API ********/
+//**** https://openai.com/blog/openai-api */
+
+//*** now we have to gather up the response as a post */
+//*** grab the prompt the user made etc */
 app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
