@@ -1,3 +1,15 @@
+/**** https://expressjs.com/ *****/
+/* basic web server */
+
+/**** dotenv **********/
+/** for my .env file */
+
+/**** cors ***** */
+/** to prevent cross browser issues */
+
+/**** openai **********/
+/** openai api */
+
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
@@ -17,11 +29,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+/*** validate that I'm connected via get */
 app.get('/', async (req, res) => {
   res.status(200).send({
     message: 'Hello!'
   })
 })
+
+//************* THIS COMES FROM THE OPENAI CHATGPT API ********/
+//**** https://openai.com/blog/openai-api */
+
+//*** now we have to gather up the response as a post */
+//*** grab the prompt the user made etc */
 
 app.post('/', async (req, res) => {
   try {
